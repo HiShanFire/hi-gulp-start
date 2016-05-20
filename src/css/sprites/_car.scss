@@ -1,0 +1,10 @@
+@mixin sp-car-1($imgUrl:$spriteUrl){
+                        background-image: url(#{$imgUrl}car.png);
+                        background-position:0px 0px;
+                    }@mixin sp-car-2($imgUrl:$spriteUrl){
+                        background-image: url(#{$imgUrl}car.png);
+                        background-position:-240px 0px;
+                    }@mixin sp-car-3($imgUrl:$spriteUrl){
+                        background-image: url(#{$imgUrl}car.png);
+                        background-position:0px -141px;
+                    }

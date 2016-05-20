@@ -4,14 +4,17 @@ var path = require('path'),
 
 
 var $sprite_cfg = {
-    cssFile: '_mixin.sprites.css',
-    baseUrl: '../images/sprites',
-    prefix: 'sp-',
-    template: (data) => {
-        return `%${data.name}{
-                    background-image: url(${data.url});
-                    background-position:${data.position.x} ${data.position.y};
-                }`
+    outputCss: {
+        fileType: 'scss',
+        fileName: '_mixin.sprites',
+        prefix: 'sp-',
+        template: 'scss'
+        // template: (data) => {
+        //     return `%${data.name}{
+        //                 background-image: url(${data.url});
+        //                 background-position:${data.position.x} ${data.position.y};
+        //             }`
+        // }
     }
 }
 
@@ -23,11 +26,11 @@ module.exports = {
             path: path.join($path.dev_server, 'images/sprites')
         },
         outputCss: {
-            file: $sprite_cfg.cssFile,
+            fileType: $sprite_cfg.outputCss.fileType,
+            fileName: $sprite_cfg.outputCss.fileName,
             path: path.join($path.dev, 'css/sprites'),
-            baseUrl: $sprite_cfg.baseUrl,
-            prefix: $sprite_cfg.prefix,
-            template: $sprite_cfg.template
+            prefix: $sprite_cfg.outputCss.prefix,
+            template: $sprite_cfg.outputCss.template
         }
     }),
 
@@ -38,11 +41,11 @@ module.exports = {
             path: path.join($path.prod, 'images/sprites')
         },
         outputCss: {
-            file: $sprite_cfg.cssFile,
+            fileType: $sprite_cfg.outputCss.fileType,
+            fileName: $sprite_cfg.outputCss.fileName,
             path: path.join($path.pre, 'css/sprites'),
-            baseUrl: $sprite_cfg.baseUrl,
-            prefix: $sprite_cfg.prefix,
-            template: $sprite_cfg.template
+            prefix: $sprite_cfg.outputCss.prefix,
+            template: $sprite_cfg.outputCss.template
         }
     })
 }

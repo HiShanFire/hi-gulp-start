@@ -13,7 +13,14 @@ module.exports = {
         devServer.init({
             server: {
                 baseDir: $path.dev_server,
-                directory: true
+                directory: true,
+                proxy: {
+                    target: 'http://de.bug',
+                    middleware: (req, res, next) => {
+                        console.log(req.url)
+                        next()
+                    }
+                }
             }
         });
     },

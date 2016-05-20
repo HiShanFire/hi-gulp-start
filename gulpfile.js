@@ -59,7 +59,7 @@ var initWatcher = (arr, fn) => {
 gulp.task('dev_watcher', function(){
     initWatcher([$path.dev +'/**/*.html'], gulp.series('dev_html', $server.dev_reload))
     initWatcher([$path.dev +'/**/*.js'], gulp.series('dev_js', $server.dev_reload))
-    initWatcher([$path.dev +'/**/*.css'], gulp.series('dev_css'));
+    initWatcher([$path.dev +'/css/**/*.{css,scss}'], gulp.series('dev_css'));
     initWatcher([$path.dev +'/sprites/**/*.{jpg,png}'], gulp.series('dev_sprite'));
     initWatcher([$path.dev +'/images/**/*.{png,jpg,gif,jpeg,ico,eot,svg,ttf,woff}'], gulp.series('dev_img'));
 });
