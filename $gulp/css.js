@@ -19,6 +19,7 @@ module.exports = {
             .pipe(sourcemaps.init())
             .pipe(sass())
             .pipe(postcss([ autoprefixer({ browsers: autoprefixer_config}) ]))
+            .pipe(nano({zindex:false}))
             .pipe(sourcemaps.write())
             .pipe(gulp.dest($path.dev_server))
             .pipe($reload({stream: true}))

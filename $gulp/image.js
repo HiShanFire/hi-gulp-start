@@ -7,14 +7,15 @@ var $path = require('./config').path,
     pngquant = require('imagemin-pngquant')
 ;
 
+
 function dev_img(){
-    return gulp.src($path.dev+'/**/*.{png,jpg,gif,jpeg,ico,eot,svg,ttf,woff}')
+    return gulp.src([$path.dev+'/**/*.{png,jpg,gif,jpeg,ico,eot,svg,ttf,woff}', '!'+$path.dev+'/sprites/**/*'])
         .pipe(cached(dev_img))
         .pipe(gulp.dest($path.dev_server))
 }
 
 function prod_img(){
-    return gulp.src($path.pre+'/**/*.{png,jpg,gif,jpeg,ico,eot,svg,ttf,woff}')
+    return gulp.src([$path.pre+'/**/*.{png,jpg,gif,jpeg,ico,eot,svg,ttf,woff}', '!'+$path.pre+'/sprites/**/*'])
         .pipe(cached(prod_img))
         .pipe(imagemin({
             progressive: false,

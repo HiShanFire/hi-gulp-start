@@ -1,0 +1,21 @@
+@charset "UTF-8";
+$red:#f00;
+.index-title{
+    color: $red;
+}
+
+.index-red{
+    color: $lightRed;
+}
+
+
+.car{
+    width: 200px;
+    height: 100px;
+    @include sp-car-3('../images/sprites/');
+    transition:all 0.3s;
+
+    &:hover{
+        width: 10px;
+    }
+}

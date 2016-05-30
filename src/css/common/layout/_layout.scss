@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+.layout-aside{
+    height: 100%;
+    float: left;
+    width: 300px;
+    background-color: #52d;
+
+    @include breakpoint($mq-s){
+        width: 80px;
+    }
+}
+
+.layout-container{
+    padding: 20px;
+    height: 100%;
+    overflow: hidden;
+    background-color: #eee;
+}
+
+.layout-logo{
+    &:before{
+        content:'\e600';
+        @extend %iconfont;
+        color:#fff;
+        font-size: 30px;
+    }
+
+}

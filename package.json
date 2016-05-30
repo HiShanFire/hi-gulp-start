@@ -4,7 +4,9 @@
   "description": "use gulp4",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "gulp",
+    "prod": "gulp dist"
   },
   "repository": {
     "type": "git",

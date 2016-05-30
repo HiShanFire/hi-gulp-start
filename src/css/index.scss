@@ -1,14 +1,7 @@
 @charset "UTF-8";
 
-$spriteUrl:'../images/sprites/';
-
 @import
-    "sprites/mixin.sprites"
+    'plugins/breakpoint/breakpoint',
+    "sprites/mixin.sprites",
+    'index/entry'
 ;
-
-.b{
-    width: 155px;
-    height: 220px;
-    border:5px solid #06c;
-    @include sp-1;
-}

@@ -65,7 +65,6 @@ gulp.task('dev_watcher', function(){
 });
 
 
-
 gulp.task('default', gulp.series('dev_clean', 'dev_sprite', gulp.parallel('dev_html', 'dev_css', 'dev_js', 'dev_img'), gulp.parallel('dev_server', 'dev_watcher') )
 );
 

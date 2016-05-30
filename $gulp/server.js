@@ -37,26 +37,4 @@ module.exports = {
             }
         });
     }
-};
-
-// gulp.task('dev_server', ()=>{
-//     browserSync.init({
-//         server: {
-//             baseDir: $path.tmp,
-//             directory: true
-//         }
-//     });
-// });
-
-
-// gulp.task('distServer', ()=>{
-//     var bs = require('browser-sync').create();
-//     bs.init({
-//         port: 9001,
-//         ghostMode: false,
-//         server: {
-//             baseDir: $path.dist,
-//             directory: true
-//         }
-//     })
-// });
+}
